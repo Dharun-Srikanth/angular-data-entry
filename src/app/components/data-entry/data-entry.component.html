@@ -1,0 +1,65 @@
+<div
+  class="container d-flex justify-content-center align-items-center min-vh-100"
+>
+  <div class="entry w-50 mx-4">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter your name"
+        [(ngModel)]="name"
+      />
+      <label for="name" class="ms-3">Username</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your mail"
+        [(ngModel)]="email"
+      />
+      <label for="email" class="ms-3">E-mail</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        placeholder="Enter your phone number"
+        [(ngModel)]="phone"
+      />
+      <label for="phone" class="ms-3">Phone Number</label>
+    </div>
+    <button class="btn btn-success w-100" (click)="save(id)">Save</button>
+  </div>
+
+  <div class="show mx-4">
+    <table class="table table-striped w-100 text-center">
+      <thead>
+        <tr>
+          <th scope="col" class="px-5">ID</th>
+          <th scope="col" class="px-5">Name</th>
+          <th scope="col" class="px-5">Email</th>
+          <th scope="col" class="px-5">Phone</th>
+          <th scope="col" class="px-5">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="px-5" *ngFor="let detail of detailsList">
+          <td scope="row">{{ detail.id }}</td>
+          <td>{{ detail.name }}</td>
+          <td>{{ detail.email }}</td>
+          <td>{{ detail.phone }}</td>
+          <td>
+            <button class="btn btn-warning me-1" (click)="edit(detail.id)">
+              Edit
+            </button>
+            <button class="btn btn-danger" (click)="delete(detail.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
