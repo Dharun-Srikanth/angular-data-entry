@@ -12,6 +12,7 @@ export class DataEntryComponent {
   email: string = '';
   phone: string = '';
   id: number = 0;
+  status:boolean = false;
 
   detailsList: EntryType[] = [];
 
@@ -29,6 +30,7 @@ export class DataEntryComponent {
       this.name = '';
       this.email = '';
       this.phone = '';
+      this.status = true;
     } else {
       this.detailsList = this.dataObj.editData(
         this.id,
@@ -39,6 +41,7 @@ export class DataEntryComponent {
       this.name = "";
       this.email = "";
       this.phone = "";
+      
     }
   }
 

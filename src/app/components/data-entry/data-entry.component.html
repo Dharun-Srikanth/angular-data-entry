@@ -1,6 +1,11 @@
+<div class="info d-flex justify-content-center p-5">
+  <button class="btn btn-outline-dark"><i class="bi bi-info-circle-fill"></i>&nbsp; Info </button>
+</div>
+
 <div
-  class="container d-flex justify-content-center align-items-center min-vh-100"
+  class="container d-flex justify-content-center align-items-center"
 >
+  
   <div class="entry w-50 mx-4">
     <div class="form-floating mb-3">
       <input
@@ -8,8 +13,8 @@
         class="form-control"
         id="name"
         placeholder="Enter your name"
-        [(ngModel)]="name"
       />
+
       <label for="name" class="ms-3">Username</label>
     </div>
     <div class="form-floating mb-3">
@@ -29,6 +34,8 @@
         id="phone"
         placeholder="Enter your phone number"
         [(ngModel)]="phone"
+        name="phone"
+        ngModel
       />
       <label for="phone" class="ms-3">Phone Number</label>
     </div>
@@ -56,7 +63,9 @@
             <button class="btn btn-warning me-1" (click)="edit(detail.id)">
               Edit
             </button>
-            <button class="btn btn-danger" (click)="delete(detail.id)">Delete</button>
+            <button class="btn btn-danger" (click)="delete(detail.id)">
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
